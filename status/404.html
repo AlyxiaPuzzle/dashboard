@@ -37,6 +37,15 @@
           usage: 'INFO <message string>: Get Info On outages.'
         })
         
+        cnsl.register('launch' function () {
+          return 'INFO: Please enter your password in order to continue.
+          cnsl.register('alpha centauri' function () {
+            return 'INFO: JOHN has been launched.'
+          }, {}
+        }, {
+          usage: 'INFO <message string>: Lanch John in case of emergency.'
+        })
+        
         cnsl.register('help', function () {
           return Object.keys(cnsl.handlers).map(function (name) {
             return ' - ' + cnsl.handlers[name].cfg.usage
