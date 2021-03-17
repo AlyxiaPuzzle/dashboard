@@ -32,17 +32,17 @@
           usage: 'SETNAME <newname>; || NAME <newname>: Change your name (works in network play too).'
         })
 
-  cnsl.register('help', function () {
-    return Object.keys(cnsl.handlers).map(function (name) {
-      return ' - ' + cnsl.handlers[name].cfg.usage
-    }).join('\n')
-  }, {
-    usage: 'HELP: Show help messages.'
-  })
+        cnsl.register('help', function () {
+          return Object.keys(cnsl.handlers).map(function (name) {
+            return ' - ' + cnsl.handlers[name].cfg.usage
+          }).join('\n')
+        }, {
+          usage: 'HELP: Show help messages.'
+        })
 
-  cnsl.register(function () {
-    return 'Unrecognized command. Use `help`.'
-  })
+        cnsl.register(function () {
+          return 'Unrecognized command. Use `help`.'
+        })
         document.getElementById('slash').addEventListener('click', function () { cnsl.toggle() })
 </script>
     </center>
