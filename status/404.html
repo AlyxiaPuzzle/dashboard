@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <!--<link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+    <script src="https://unpkg.com/console.js@2"></script>
+  </head>
+  <body>
+    <center>
+      <h1> Oh no! You've hit a 404. </h1>
+      <h5> Our engineers are working on it diligently, and will try to restore service as soon as possible! </h5>
+      <p id="slash">hi</p>
+      <script>
+        var cnsl = new window.Console({
+          welcome: 'Welcome to the alyxia outage management system. There is currently 1 system outage(s). Type \'help\' for a list of commands.'
+        })
+
+        // Virtual game data
+        var player = {
+          name: 'USER'
+        }
+        var system = {
+          status: 'CTF Dashboard is DOWN. Rebooting...'
+        }
+
+        // .register(<name>, <handler>, <anything>)
+        cnsl.register('log', function () {
+          return player.name + ': "' + Array.prototype.join.call(arguments, ' ') + '"'
+        }, {
+          usage: 'LOG <message string>: Broadcast a message to the console. Visible to administrators.'
+        })
+        
+        cnsl.register('info', function () {
+          return 'INFO:' + system.status
+          const system = {
+            status: 'All Systems functional! To test, visit https://alyxiacontest.github.io/dashboard'
+          }
+        }, {
+          usage: 'INFO <message string>: Get Info On outages.'
+        })
+        
+        cnsl.register('help', function () {
+          return Object.keys(cnsl.handlers).map(function (name) {
+            return ' - ' + cnsl.handlers[name].cfg.usage
+          }).join('\n')
+        }, {
+          usage: 'HELP: Show help messages.'
+        })
+
+        cnsl.register(function () {
+          return 'Unrecognized command. Use `help`.'
+        })
+        document.getElementById('slash').addEventListener('click', function () { cnsl.toggle() })
+</script>
+    </center>
+  </body>
+</html>
