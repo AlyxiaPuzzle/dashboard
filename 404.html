@@ -42,6 +42,7 @@
   cnsl.register(function () {
     return 'Unrecognized command. Use `help`.'
   })
+        document.getElementById('slash').addEventListener('click', function () { cnsl.toggle() })
 </script>
     </center>
   </body>
