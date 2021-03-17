@@ -10,35 +10,33 @@
       <p id="slash">hi</p>
       <script>
         var cnsl = new window.Console({
-          welcome: '           _            _         ____  ____   _____ 
-     /\   | |          (_)       |  _ \|  _ \ / ____|
-    /  \  | |_   ___  ___  __ _  | |_) | |_) | (___  
-   / /\ \ | | | | \ \/ / |/ _` | |  _ <|  _ < \___ \ 
-  / ____ \| | |_| |>  <| | (_| | | |_) | |_) |____) |
- /_/    \_\_|\__, /_/\_\_|\__,_| |____/|____/|_____/ 
-              __/ |                                  
-             |___/                                   '
+          welcome: 'Welcome to the alyxia outage management system. There is currently 1 system outage(s). Type \'help\' for a list of commands.'
         })
 
         // Virtual game data
         var player = {
-          name: 'Player'
+          name: 'USER'
+        }
+        var system = {
+          status: 'CTF Dashboard is DOWN. Rebooting...'
         }
 
         // .register(<name>, <handler>, <anything>)
-        cnsl.register('say', function () {
+        cnsl.register('log', function () {
           return player.name + ': "' + Array.prototype.join.call(arguments, ' ') + '"'
         }, {
-          usage: 'SAY <message string>: Broadcast a message to other players in the game.'
+          usage: 'LOG <message string>: Broadcast a message to the console. Visible to administrators.'
         })
-
-        cnsl.register('setname', function (name) {
-          player.name = name
-          return 'Player name is ' + player.name + ' now.'
+        
+        cnsl.register('info', function () {
+          return 'INFO:' + system.status
+          const system = {
+            status: 'All Systems functional! To test, visit https://alyxiacontest.github.io/dashboard'
+          }
         }, {
-          usage: 'SETNAME <newname>; || NAME <newname>: Change your name (works in network play too).'
+          usage: 'INFO <message string>: Get Info On outages.'
         })
-
+        
         cnsl.register('help', function () {
           return Object.keys(cnsl.handlers).map(function (name) {
             return ' - ' + cnsl.handlers[name].cfg.usage
