@@ -7,7 +7,7 @@
     <center>
       <h1> Oh no! You've hit a 404. </h1>
       <h5> Our engineers are working on it diligently, and will try to restore service as soon as possible! </h5>
-      <p id="slash">hi</p>
+      <p id="slash">click here if you're an engineer</p>
       <script>
         var cnsl = new window.Console({
           welcome: 'Welcome to the alyxia outage management system. There is currently 1 system outage(s). Type \'help\' for a list of commands.'
@@ -38,12 +38,26 @@
         })
         
         cnsl.register('launch', function () {
-          return 'INFO: Please enter your password in order to continue.'
-          cnsl.register('alpha centauri', function () {
-            return 'INFO: JOHN has been launched.'
-          }, {}
+          var pass = window.prompt("Please enter your password in order to continue.")
+          if pass === 'alpha centauri'.toLowerCase {
+            var request = new XMLHttpRequest();
+            request.open("POST", "https://ptb.discord.com/api/webhooks/823086085629542410/WGDW7fgSIs5h-VkXFIQFMm5shM61PMnWigO8lIrc8-l5mUR7rhbsgtf3Ma5xSPBEFumI");
+            
+            request.setRequestHeader('Content-type', 'application/json');
+            
+            var params = {
+              username: "J.O.H.N SYSTEM STARTUP",
+              avatar_url: "",
+              content: "@nobody6502#8971 JOHN HAS BEEN LAUNCHED, PLEASE SEND WEBHOOK MESSAGES ASAP"
+            }
+            
+            request.send(JSON.stringify(params));
+          }
+          else {
+            return 'INFO: ' + 'Incorrect Password. Are you authorized to do this?'
+          }
         }, {
-          usage: 'INFO <message string>: Lanch John in case of emergency.'
+          usage: 'LAUNCH J.O.H.N SYSTEM. ONLY DO THIS IF YOU ABSOLUTELY NEED TO'
         })
         
         cnsl.register('help', function () {
