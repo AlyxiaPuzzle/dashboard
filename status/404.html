@@ -17,11 +17,11 @@
         var player = {
           name: 'USER'
         }
-        let system = 'CTF Dashboard is DOWN. Rebooting...'
+        var system = 'CTF Dashboard is DOWN. Rebooting...'
         
         cnsl.register('info', function () {
           return 'INFO:' + system;
-          let system = 'System loaded! Master password can be found at https://alyxiacontest.github.io/debug/password'
+          var system = 'System loaded! Master password can be found at https://alyxiacontest.github.io/debug/password'
         }, {
           usage: 'INFO <message string>: Get Info On outages.'
         })
