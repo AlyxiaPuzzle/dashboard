@@ -10,7 +10,7 @@
       <p id="slash">click here if you're an engineer</p>
       <script>
         var cnsl = new window.Console({
-          welcome: 'Welcome to the alyxia outage management system. There is currently 1 system outage(s). Type \'help\' for a list of commands.'
+          welcome: 'Welcome to the alyxia outage management system. There is currently 1 system outage(s).' + '\n Type \'help\' for a list of commands.'
         });
 
         // Virtual game data
@@ -20,13 +20,6 @@
         const system = {
           status: 'CTF Dashboard is DOWN. Rebooting...'
         }
-
-        // .register(<name>, <handler>, <anything>)
-        cnsl.register('log', function () {
-          return player.name + ': "' + Array.prototype.join.call(arguments, ' ') + '"'
-        }, {
-          usage: 'LOG <message string>: Broadcast a message to the console. Visible to administrators.'
-        })
         
         cnsl.register('info', function () {
           return 'INFO:' + system.status
