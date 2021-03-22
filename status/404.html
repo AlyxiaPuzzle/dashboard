@@ -17,15 +17,11 @@
         var player = {
           name: 'USER'
         }
-        const system = {
-          status: 'CTF Dashboard is DOWN. Rebooting...'
-        }
+        const system = 'CTF Dashboard is DOWN. Rebooting...'
         
         cnsl.register('info', function () {
-          return 'INFO:' + system.status
-          const system = {
-            status: 'All Systems functional! To test, visit https://alyxiacontest.github.io/dashboard'
-          }
+          return 'INFO:' + system
+          const system = 'All Systems functional! To test, visit https://alyxiacontest.github.io/dashboard'
         }, {
           usage: 'INFO <message string>: Get Info On outages.'
         })
