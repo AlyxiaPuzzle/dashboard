@@ -32,18 +32,18 @@
         
         cnsl.register('launch', function () {
           const pass = window.prompt("Please enter your password in order to continue.")
-          if (pass.toString === 'alpha centauri') {
+          if (pass.toString() === 'alpha centauri') {
             var request = new XMLHttpRequest();
-            request.open("POST", "https://ptb.discord.com/api/webhooks/823086085629542410/WGDW7fgSIs5h-VkXFIQFMm5shM61PMnWigO8lIrc8-l5mUR7rhbsgtf3Ma5xSPBEFumI");
-            
+            request.open("POST", "https://discord.com/api/webhooks/823511100070297610/iX3FI2YCwHYZluEatS_cNObRje7dOyCmmIvGT62asfS0M-8J1KotODAeEUpuQaK2d7Dh");
+		    
             request.setRequestHeader('Content-type', 'application/json');
-            
+									       
             var params = {
-              username: "J.O.H.N SYSTEM STARTUP",
-              avatar_url: "",
-              content: "@nobody6502#8971 JOHN HAS BEEN LAUNCHED, PLEASE SEND WEBHOOK MESSAGES ASAP"
-            }
-            
+              username: "you dummy",
+              avatar_url: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p36kevgzs6mytsidhago.png",
+              content: "JOHN HAS LAUNCHED WOOO"
+            };
+									       
             request.send(JSON.stringify(params));
           }
           else {
