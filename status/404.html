@@ -17,14 +17,14 @@
         var player = {
           name: 'USER'
         }
-        let system = false;
+        system = false;
         
         cnsl.register('info', function () {
           if (system = true) {
             return 'INFO: ' + 'System loaded! Master password can be found at https://alyxiacontest.github.io/debug/password'
           } else {
+            system = true;
             return 'INFO: ' + 'CTF Dashboard is DOWN. Rebooting...' + '\n' + 'Run \'info\' for progress'
-            let system = true;
           }
         }, {
           usage: 'INFO <message string>: Get Info On outages.'
