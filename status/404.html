@@ -32,8 +32,23 @@
         
         cnsl.register('launch', function () {
           const pass = window.prompt("Please enter your password in order to continue.")
-          if("alpha centauri"===pass.toString()){var a=new XMLHttpRequest;a.open("POST","https://discord.com/api/webhooks/823511100070297610/iX3FI2YCwHYZluEatS_cNObRje7dOyCmmIvGT62asfS0M-8J1KotODAeEUpuQaK2d7Dh");a.setRequestHeader("Content-type","application/json");a.send(JSON.stringify({username:"you dummy",g:"https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p36kevgzs6mytsidhago.png",content:"JOHN HAS LAUNCHED WOOO"}))}else return "INFO: Incorrect Password. Are you authorized to do this?";
-        }, {
+          if (pass.toString() === 'alpha centauri') {
+            var request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/823086085629542410/WGDW7fgSIs5h-VkXFIQFMm5shM61PMnWigO8lIrc8-l5mUR7rhbsgtf3Ma5xSPBEFumI");
+		    
+            request.setRequestHeader('Content-type', 'application/json');
+									       
+            var params = {
+              username: "you dummy",
+              avatar_url: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p36kevgzs6mytsidhago.png",
+              content: "JOHN HAS LAUNCHED WOOO"
+            };
+									       
+            request.send(JSON.stringify(params));
+          }
+          else {
+            return 'INFO: ' + 'Incorrect Password. Are you authorized to do this?'
+          }}, {
           usage: 'LAUNCH: Start\'s john system.'
         })
         
