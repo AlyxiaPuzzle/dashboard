@@ -31,24 +31,8 @@
         })
         
         cnsl.register('launch', function () {
-          const pass = window.prompt("Please enter your password in order to continue.")
-          if (pass.toString() === 'alpha centauri') {
-            var request = new XMLHttpRequest();
-            request.open("POST", "https://discord.com/api/webhooks/823086085629542410/WGDW7fgSIs5h-VkXFIQFMm5shM61PMnWigO8lIrc8-l5mUR7rhbsgtf3Ma5xSPBEFumI");
-		    
-            request.setRequestHeader('Content-type', 'application/json');
-									       
-            var params = {
-              username: "you dummy",
-              avatar_url: "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p36kevgzs6mytsidhago.png",
-              content: "JOHN HAS LAUNCHED WOOO"
-            };
-									       
-            request.send(JSON.stringify(params));
-          }
-          else {
-            return 'INFO: ' + 'Incorrect Password. Are you authorized to do this?'
-          }}, {
+		return 'JOHN system is already running.'
+          }, {
           usage: 'LAUNCH: Start\'s john system.'
         })
         
