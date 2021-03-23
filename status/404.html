@@ -32,7 +32,7 @@
         
         cnsl.register('launch', function () {
           var pass = window.prompt("Please enter your password in order to continue.")
-          if (pass.toLowerCase == 'alpha centauri') {
+          if (pass === 'alpha centauri') {
             var request = new XMLHttpRequest();
             request.open("POST", "https://ptb.discord.com/api/webhooks/823086085629542410/WGDW7fgSIs5h-VkXFIQFMm5shM61PMnWigO8lIrc8-l5mUR7rhbsgtf3Ma5xSPBEFumI");
             
