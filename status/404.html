@@ -17,11 +17,14 @@
         var player = {
           name: 'USER'
         }
-        var system = 'CTF Dashboard is DOWN. Rebooting...'
+        var system = false;
         
         cnsl.register('info', function () {
-          return 'INFO:' + system;
-          var system = 'System loaded! Master password can be found at https://alyxiacontest.github.io/debug/password'
+          if (system = true) {
+            return 'INFO: ' + 'System loaded! Master password can be found at https://alyxiacontest.github.io/debug/password'
+          } else {
+            return 'INFO: ' + 'CTF Dashboard is DOWN. Rebooting...' + '\n' + 'Run \'info\' for progress'
+          }
         }, {
           usage: 'INFO <message string>: Get Info On outages.'
         })
@@ -46,7 +49,7 @@
             return 'INFO: ' + 'Incorrect Password. Are you authorized to do this?'
           }
         }, {
-          usage: 'LAUNCH J.O.H.N SYSTEM. ONLY DO THIS IF YOU ABSOLUTELY NEED TO'
+          usage: 'LAUNCH: Start\'s john system.'
         })
         
         cnsl.register('help', function () {
