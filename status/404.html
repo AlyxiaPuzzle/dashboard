@@ -22,7 +22,7 @@
         cnsl.register('info', function () {
           if (system = true) {
             return 'INFO: ' + 'System loaded! Master password can be found at https://alyxiacontest.github.io/debug/password'
-          } else {
+          } else if (system = false) {
             system = true;
             return 'INFO: ' + 'CTF Dashboard is DOWN. Rebooting...' + '\n' + 'Run \'info\' for progress'
           }
